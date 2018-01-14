@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{10D8E54E-1058-4834-A19E-64515D0E9F6D}"
 EndProject
@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{10BA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExtraTest", "ExtraTest", "{A969EA5A-E0AE-47E0-ADEF-53C37131F485}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modular.WebHost", "src\Modular.WebHost\Modular.WebHost.csproj", "{B13EC77A-FD31-4DBC-A417-F35280D86280}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modular.Host", "src\Modular.WebHost\Modular.Host.csproj", "{B13EC77A-FD31-4DBC-A417-F35280D86280}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtraDepenencyTest", "src\ExtraTest\ExtraDepenencyTest\ExtraDepenencyTest.csproj", "{F2941F46-F442-43D5-8D60-D53E110C9FB2}"
 EndProject

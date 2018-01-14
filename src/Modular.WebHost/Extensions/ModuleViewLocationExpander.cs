@@ -1,12 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc.Razor;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Razor;
 
-namespace Modular.WebHost.Extensions
-{
-    public class ModuleViewLocationExpander : IViewLocationExpander
+namespace Modular.Host.Extensions {
+	public class ModuleViewLocationExpander : IViewLocationExpander
     {
         private const string _moduleKey = "module";
 

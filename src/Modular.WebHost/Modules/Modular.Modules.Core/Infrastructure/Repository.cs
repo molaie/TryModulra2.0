@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Modular.WebHost.Modules.Modular.Modules.Core.Infrastructure
+namespace  Modular.Host.Modules.Modular.Modules.Core.Infrastructure
 {
     public class Repository<T> : RepositoryWithTypedId<T, long>, IRepository<T>
         where T : class, IEntityWithTypedId<long>
