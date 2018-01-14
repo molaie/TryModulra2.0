@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Modular.Modules.Core.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace Modular.Modules.Core.Infrastructure
 {

@@ -1,13 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using System;
+using Microsoft.AspNetCore.Identity;
 using Modular.Core.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Modular.Modules.Core.Models
-{
-    public class User : IdentityUser<long>, IEntityWithTypedId<long>
+namespace Modular.Modules.Core.Models {
+	public class User : IdentityUser<long>, IEntityWithTypedId<long>
     {
         public User()
         {

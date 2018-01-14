@@ -21,6 +21,7 @@ using Autofac;
 using Modular.Core.Domain;
 using Autofac.Extensions.DependencyInjection;
 using Modular.WebHost.Modules.Modular.Modules.Core.Infrastructure;
+using Microsoft.AspNetCore.Identity;
 
 namespace Modular.WebHost
 {
@@ -41,7 +42,7 @@ namespace Modular.WebHost
             if (env.IsDevelopment())
             {
                 // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
-                builder.AddUserSecrets();
+                //builder.AddUserSecrets();
             }
 
             builder.AddEnvironmentVariables();
@@ -60,7 +61,7 @@ namespace Modular.WebHost
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Modular.WebHost")));
 
             services.AddIdentity<User, Role>()
-                .AddEntityFrameworkStores<ModularDbContext, long>()
+                .AddEntityFrameworkStores<ModularDbContext>()
                 .AddDefaultTokenProviders();
 
             services.Configure<RazorViewEngineOptions>(options =>

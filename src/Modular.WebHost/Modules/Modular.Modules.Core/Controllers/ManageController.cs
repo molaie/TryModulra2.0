@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -10,9 +8,8 @@ using Modular.Modules.Core.Models;
 using Modular.Modules.Core.Models.ManageViewModels;
 using Modular.Modules.Core.Services;
 
-namespace Modular.Modules.Core.Controllers
-{
-    [Authorize]
+namespace Modular.Modules.Core.Controllers {
+	[Authorize]
     public class ManageController : Controller
     {
         private readonly UserManager<User> _userManager;
@@ -274,7 +271,8 @@ namespace Modular.Modules.Core.Controllers
                 return View("Error");
             }
             var userLogins = await _userManager.GetLoginsAsync(user);
-            var otherLogins = _signInManager.GetExternalAuthenticationSchemes().Where(auth => userLogins.All(ul => auth.AuthenticationScheme != ul.LoginProvider)).ToList();
+
+			var otherLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).Where(auth => userLogins.All(ul => auth.Name != ul.LoginProvider)).ToList();
             ViewData["ShowRemoveButton"] = user.PasswordHash != null || userLogins.Count > 1;
             return View(new ManageLoginsViewModel
             {
