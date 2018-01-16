@@ -109,7 +109,7 @@ namespace Modular.Host {
 				});
 			}
 
-			app.UseIdentity();
+			app.UseAuthentication();
 
 			app.UseMvc(routes => {
 				routes.MapRoute(
