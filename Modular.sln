@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modular.Modules.ModuleA", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modular.Modules.ModuleB", "src\Modular.WebHost\Modules\Modular.Modules.ModuleB\Modular.Modules.ModuleB.csproj", "{D944C2FA-DAB6-4AA9-8C43-89B3A8E123B7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modular.Core", "src\Core\Modular.Core\Modular.Core.csproj", "{CC84320D-69A0-4068-9076-3C74E382351F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yooshina.Core", "src\Core\Modular.Core\Yooshina.Core.csproj", "{CC84320D-69A0-4068-9076-3C74E382351F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

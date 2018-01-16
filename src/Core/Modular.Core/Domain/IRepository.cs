@@ -1,10 +1,10 @@
-﻿using Modular.Core.Domain.Models;
+﻿using Yooshina.Core.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Modular.Core.Domain
+namespace Yooshina.Core.Domain
 {
     public interface IRepository<T> : IRepositoryWithTypedId<T, long> where T : IEntityWithTypedId<long>
     {

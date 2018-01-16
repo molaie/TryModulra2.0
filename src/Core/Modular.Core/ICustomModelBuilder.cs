@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Modular.Core
+namespace Yooshina.Core
 {
     public interface ICustomModelBuilder
     {
