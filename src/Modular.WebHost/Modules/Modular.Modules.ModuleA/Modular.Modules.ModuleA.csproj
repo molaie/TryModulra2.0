@@ -10,7 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Core\Modular.Core\Yooshina.Core.csproj" />
     <ProjectReference Include="..\..\..\ExtraTest\ExtraDepenencyTest\ExtraDepenencyTest.csproj" />
   </ItemGroup>
 

@@ -15,7 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Core\Modular.Core\Yooshina.Core.csproj" />
+    <ProjectReference Include="..\..\..\Core\Yooshina.Domain\Yooshina.Domain\Yooshina.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Core\Yooshina.Modules\ClassLibrary1\Yooshina.Modules.csproj" />
   </ItemGroup>
 
 </Project>
