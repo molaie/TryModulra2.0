@@ -1,16 +1,15 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-using Modular.Core;
-using Modular.Core.Domain.Models;
-using Modular.Modules.Core.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using Modular.Modules.Core.Models;
+using Yooshina.Core;
+using Yooshina.Domain.Models;
 
-namespace Modular.Modules.Core.Infrastructure
-{
-    public class ModularDbContext : IdentityDbContext<User, Role, long>
+namespace Modular.Modules.Core.Infrastructure {
+	public class ModularDbContext : IdentityDbContext<User, Role, long>
     {
         public ModularDbContext(DbContextOptions options) : base(options)
         {

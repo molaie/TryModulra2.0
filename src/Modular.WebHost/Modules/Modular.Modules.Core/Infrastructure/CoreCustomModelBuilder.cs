@@ -1,12 +1,10 @@
-﻿using Modular.Core;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Modular.Modules.Core.Models;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
+using Yooshina.Core;
 
-namespace Modular.Modules.Core.Infrastructure
-{
-    public class CoreCustomModelBuilder : ICustomModelBuilder
+namespace Modular.Modules.Core.Infrastructure {
+	public class CoreCustomModelBuilder : ICustomModelBuilder
     {
         public void Build(ModelBuilder modelBuilder)
         {

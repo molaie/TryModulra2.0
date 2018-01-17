@@ -1,8 +1,7 @@
-﻿using Modular.Core.Domain.Models;
+﻿using Yooshina.Domain.Models;
 
-namespace Modular.Modules.Core.Models
-{
-    public class Product : Entity
+namespace Modular.Modules.Core.Models {
+	public class Product : Entity
     {
         public string Name { get; set; }
 

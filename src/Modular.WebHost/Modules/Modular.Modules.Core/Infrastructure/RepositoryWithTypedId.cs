@@ -1,11 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Modular.Core.Domain;
-using Modular.Core.Domain.Models;
-using System.Linq;
+﻿using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using Yooshina.Domain;
+using Yooshina.Domain.Models;
 
-namespace Modular.Modules.Core.Infrastructure
-{
-    public class RepositoryWithTypedId<T, TId> : IRepositoryWithTypedId<T, TId> where T : class, IEntityWithTypedId<TId>
+namespace Modular.Modules.Core.Infrastructure {
+	public class RepositoryWithTypedId<T, TId> : IRepositoryWithTypedId<T, TId> where T : class, IEntityWithTypedId<TId>
     {
         public RepositoryWithTypedId(ModularDbContext context)
         {

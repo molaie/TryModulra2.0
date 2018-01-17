@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Modular.Core.Domain.Models;
+using Yooshina.Domain.Models;
 
 namespace Modular.Modules.Core.Models {
 	public class Role : IdentityRole<long>, IEntityWithTypedId<long>

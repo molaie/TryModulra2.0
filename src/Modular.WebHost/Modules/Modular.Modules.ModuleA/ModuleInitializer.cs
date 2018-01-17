@@ -1,15 +1,10 @@
 ﻿using ExtraDepenencyTest;
 using Microsoft.Extensions.DependencyInjection;
-using Modular.Core;
 using Modular.Modules.ModuleA.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Yooshina.Core;
 
-namespace Modular.Modules.ModuleA
-{
-    public class ModuleInitializer : IModuleInitializer
+namespace Modular.Modules.ModuleA {
+	public class ModuleInitializer : IModuleInitializer
     {
         public void Init(IServiceCollection services)
         {

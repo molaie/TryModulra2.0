@@ -1,14 +1,9 @@
-﻿using Modular.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Modular.Modules.ModuleA.Models;
+using Yooshina.Core;
 
-namespace Modular.Modules.ModuleA.Infrastructure
-{
-    public class ModuleACustomModelBuilder : ICustomModelBuilder
+namespace Modular.Modules.ModuleA.Infrastructure {
+	public class ModuleACustomModelBuilder : ICustomModelBuilder
     {
         public void Build(ModelBuilder modelBuilder)
         {

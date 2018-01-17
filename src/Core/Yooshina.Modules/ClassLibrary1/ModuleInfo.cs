@@ -15,5 +15,10 @@ namespace Yooshina.Core {
 		}
 
 		public string Path { get; set; }
+
+
+		public override string ToString() {
+			return ShortName + ": " + Name;
+		}
 	}
 }

@@ -10,6 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Yooshina.Domain\Yooshina.Domain\Yooshina.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Core\Yooshina.Modules\ClassLibrary1\Yooshina.Modules.csproj" />
     <ProjectReference Include="..\..\..\ExtraTest\ExtraDepenencyTest\ExtraDepenencyTest.csproj" />
   </ItemGroup>
 

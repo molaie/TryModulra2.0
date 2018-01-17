@@ -13,4 +13,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Yooshina.Domain\Yooshina.Domain\Yooshina.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Core\Yooshina.Modules\ClassLibrary1\Yooshina.Modules.csproj" />
+  </ItemGroup>
+
 </Project>

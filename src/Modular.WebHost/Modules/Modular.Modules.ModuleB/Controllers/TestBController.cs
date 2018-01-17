@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Modular.Core.Domain;
 using Modular.Modules.ModuleB.Models;
+using Yooshina.Domain;
 
-namespace Modular.Modules.ModuleB.Controllers
-{
-    public class TestBController : Controller
+namespace Modular.Modules.ModuleB.Controllers {
+	public class TestBController : Controller
     {
         private IRepository<Sample> _sampleRepository;
 

@@ -1,16 +1,11 @@
 ﻿using ExtraDepenencyTest;
 using Microsoft.AspNetCore.Mvc;
-using Modular.Core.Domain;
 using Modular.Modules.ModuleA.Models;
 using Modular.Modules.ModuleA.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Yooshina.Domain;
 
-namespace Modular.Modules.ModuleA.Controllers
-{
-    public class TestAController : Controller
+namespace Modular.Modules.ModuleA.Controllers {
+	public class TestAController : Controller
     {
         private ITestService _testService;
         private IAnotherTestService _anotherTestService;

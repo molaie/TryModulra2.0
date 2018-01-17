@@ -16,12 +16,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
-using Modular.Core;
-using Modular.Core.Domain;
 using Modular.Host.Extensions;
 using Modular.Host.Modules.Modular.Modules.Core.Infrastructure;
 using Modular.Modules.Core.Infrastructure;
 using Modular.Modules.Core.Models;
+using Yooshina.Core;
+using Yooshina.Domain;
 
 namespace Modular.Host {
 	public class Startup {

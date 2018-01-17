@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Identity;
-using Modular.Core.Domain.Models;
+using Yooshina.Domain.Models;
 
 namespace Modular.Modules.Core.Models {
 	public class User : IdentityUser<long>, IEntityWithTypedId<long>
