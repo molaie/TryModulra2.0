@@ -9,7 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="wwwroot\**\*;node_modules;App_Data;Core;Modules\**\*;Themes" />
+    <Compile Remove="Modules\**" />
+    <Compile Remove="wwwroot\**\*;node_modules;App_Data;Core;Themes" />
+    <Content Remove="Modules\**" />
+    <EmbeddedResource Remove="Modules\**" />
+    <None Remove="Modules\**" />
     <None Update="Views\**\*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
