@@ -20,10 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="Modules\Modular.Modules.Core\Modular.Modules.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.0" />
     <PackageReference Include="Dotnettency" Version="2.0.0-unstable.91" />
     <PackageReference Include="Dotnettency.AspNetCore" Version="2.0.0-unstable.91" />
@@ -40,6 +36,12 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Yooshina.Domain\Yooshina.Domain\Yooshina.Domain.csproj" />
+    <ProjectReference Include="..\Core\Yooshina.Modules\ClassLibrary1\Yooshina.Modules.csproj" />
+    <ProjectReference Include="Modules\CMSCore\Yooshina.CMSCore.Service\Yooshina.CMSCore.Service.csproj" />
   </ItemGroup>
 
 </Project>

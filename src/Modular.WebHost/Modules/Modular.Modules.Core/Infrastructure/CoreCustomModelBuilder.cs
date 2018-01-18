@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using ContentModule.Poco;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Modular.Modules.Core.Models;
 using Yooshina.Core;
@@ -41,6 +42,12 @@ namespace Modular.Modules.Core.Infrastructure {
             {
                 b.ToTable("Core_UserToken");
             });
+
+			//modelBuilder.Entity<Portal>
+
+
+
+
         }
     }
 }

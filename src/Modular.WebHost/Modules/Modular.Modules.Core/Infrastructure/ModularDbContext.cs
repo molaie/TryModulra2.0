@@ -47,11 +47,11 @@ namespace Modular.Modules.Core.Infrastructure {
 
         private static void RegisterEntities(ModelBuilder modelBuilder, IEnumerable<Type> typeToRegisters)
         {
-            var entityTypes = typeToRegisters.Where(x => x.GetTypeInfo().IsSubclassOf(typeof(Entity)) && !x.GetTypeInfo().IsAbstract);
-            foreach (var type in entityTypes)
-            {
-                modelBuilder.Entity(type);
-            }
+            //var entityTypes = typeToRegisters.Where(x => x.GetTypeInfo().IsSubclassOf(typeof(Entity)) && !x.GetTypeInfo().IsAbstract);
+            //foreach (var type in entityTypes)
+            //{
+            //    modelBuilder.Entity(type);
+            //}
         }
 
         private static void RegisterCustomMappings(ModelBuilder modelBuilder, IEnumerable<Type> typeToRegisters)

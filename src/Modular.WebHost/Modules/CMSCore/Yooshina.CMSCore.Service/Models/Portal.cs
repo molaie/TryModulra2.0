@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Yooshina.Domain.Models;
 
 namespace ContentModule.Poco {
 
-	public class Portal : LogEntity {
+	public class Portal : LogEntityWithTypedId {
 
 		public Portal() {
 			this.Childs = new HashSet<Portal>();
 		}
 
-		public int ID { get; set; }
 		public string Title { get; set; }
-		public Nullable<int> ParentID { get; set; }
+		public long? ParentId { get; set; }
 		public string Description { get; set; }
 		public string Alias { get; set; }
 		public string Direction { get; set; }

@@ -17,9 +17,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using Modular.Host.Extensions;
-using Modular.Host.Modules.Modular.Modules.Core.Infrastructure;
-using Modular.Modules.Core.Infrastructure;
-using Modular.Modules.Core.Models;
+using Yooshina.CMSCore;
+using Yooshina.CMSCore.Models;
 using Yooshina.Core;
 using Yooshina.Domain;
 
@@ -41,11 +40,11 @@ namespace Modular.Host {
 
 			LoadInstalledModules();
 
-			services.AddDbContext<ModularDbContext>(options =>
-				options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Modular.WebHost")));
+			services.AddDbContext<YooshinaDbContext>(options =>
+				options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 			services.AddIdentity<User, Role>()
-				.AddEntityFrameworkStores<ModularDbContext>()
+				.AddEntityFrameworkStores<YooshinaDbContext>()
 				.AddDefaultTokenProviders();
 
 			services.Configure<RazorViewEngineOptions>(options => {
