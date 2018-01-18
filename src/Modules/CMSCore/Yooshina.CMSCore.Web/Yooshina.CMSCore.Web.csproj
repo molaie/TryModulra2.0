@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0 " />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Yooshina.CMSCore.Service\Yooshina.CMSCore.Service.csproj" />
+  </ItemGroup>
+
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if not exist &quot;$(SolutionDir)src\Yooshina.Host\Modules\CMSCore&quot; mkdir &quot;$(SolutionDir)src\Yooshina.Host\Modules\CMSCore&quot;&#xD;&#xA;xcopy &quot;$(ProjectDir)*.*&quot; &quot;$(SolutionDir)src\Yooshina.Host\Modules\CMSCore&quot; /e /s /c /y /exclude:$(SolutionDir)ex.txt" />
+  </Target>
+
+</Project>
