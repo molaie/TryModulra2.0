@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using Yooshina.CMSCore.Model;
-using Yooshina.CMSCore.Models.ManageViewModels;
+using Yooshina.CMSCore.Model.ManageViewModels;
 using Yooshina.CMSCore.Services;
 
 namespace Yooshina.CMSCore.Web.Controllers {

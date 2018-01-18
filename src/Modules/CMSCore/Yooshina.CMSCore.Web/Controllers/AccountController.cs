@@ -7,7 +7,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Yooshina.CMSCore.Model;
-using Yooshina.CMSCore.Models.AccountViewModels;
+using Yooshina.CMSCore.Model.AccountViewModels;
 using Yooshina.CMSCore.Services;
 
 namespace Yooshina.CMSCore.Web.Controllers {
