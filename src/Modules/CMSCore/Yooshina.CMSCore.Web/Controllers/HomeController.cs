@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Modular.Modules.Core.Controllers {
+namespace Yooshina.CMSCore.Web.Controllers {
 	public class HomeController : Controller {
 
 		//private readonly IContainer _Container;

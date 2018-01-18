@@ -1,13 +1,13 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Modular.Modules.Core.Models.ManageViewModels;
-using Modular.Modules.Core.Services;
+using System.Threading.Tasks;
 using Yooshina.CMSCore.Model;
+using Yooshina.CMSCore.Models.ManageViewModels;
+using Yooshina.CMSCore.Services;
 
-namespace Modular.Modules.Core.Controllers {
+namespace Yooshina.CMSCore.Web.Controllers {
 	[Authorize]
     public class ManageController : Controller
     {

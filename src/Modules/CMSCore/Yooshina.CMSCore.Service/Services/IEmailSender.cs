@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Modular.Modules.Core.Services {
+namespace Yooshina.CMSCore.Services {
 	public interface IEmailSender {
 		Task SendEmailAsync(string email, string subject, string message);
 	}

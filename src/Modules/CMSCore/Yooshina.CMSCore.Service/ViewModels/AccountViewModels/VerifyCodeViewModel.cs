@@ -1,25 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Modular.Modules.Core.Models.AccountViewModels
-{
-    public class VerifyCodeViewModel
-    {
-        [Required]
-        public string Provider { get; set; }
+namespace Yooshina.CMSCore.Model.AccountViewModels {
+	public class VerifyCodeViewModel {
+		[Required]
+		public string Provider { get; set; }
 
-        [Required]
-        public string Code { get; set; }
+		[Required]
+		public string Code { get; set; }
 
-        public string ReturnUrl { get; set; }
+		public string ReturnUrl { get; set; }
 
-        [Display(Name = "Remember this browser?")]
-        public bool RememberBrowser { get; set; }
+		[Display(Name = "Remember this browser?")]
+		public bool RememberBrowser { get; set; }
 
-        [Display(Name = "Remember me?")]
-        public bool RememberMe { get; set; }
-    }
+		[Display(Name = "Remember me?")]
+		public bool RememberMe { get; set; }
+	}
 }

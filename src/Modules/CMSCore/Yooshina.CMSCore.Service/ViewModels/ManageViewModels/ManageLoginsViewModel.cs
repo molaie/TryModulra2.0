@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Authentication;
+﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
 
-namespace Modular.Modules.Core.Models.ManageViewModels {
+namespace Yooshina.CMSCore.Model.ManageViewModels {
 	public class ManageLoginsViewModel
     {
         public IList<UserLoginInfo> CurrentLogins { get; set; }

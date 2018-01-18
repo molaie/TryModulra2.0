@@ -24,7 +24,7 @@ namespace Modular.Host.Extensions {
 
 		public void PopulateValues(ViewLocationExpanderContext context) {
 			var controller = context.ActionContext.ActionDescriptor.DisplayName;
-			var moduleName = controller.Split('.')[2];
+			var moduleName = controller.Split('.')[1];
 			if (moduleName != "WebHost") {
 				context.Values[_moduleKey] = moduleName;
 			}

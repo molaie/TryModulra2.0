@@ -1,12 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
 
-namespace Modular.Modules.Core.Models.ManageViewModels
-{
-    public class IndexViewModel
+namespace Yooshina.CMSCore.Model.ManageViewModels {
+	public class IndexViewModel
     {
         public bool HasPassword { get; set; }
 
