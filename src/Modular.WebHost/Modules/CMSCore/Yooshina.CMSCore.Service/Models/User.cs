@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Yooshina.Domain.Models;
 
-namespace Yooshina.CMSCore.Models {
+namespace Yooshina.CMSCore.Model {
 	public class User : IdentityUser<long>, IEntityWithTypedId<long> {
 		public User() {
 			CreatedOn = DateTime.Now;

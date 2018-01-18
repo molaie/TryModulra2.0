@@ -4,9 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Yooshina.CMSCore.Models;
-using Yooshina.Core;
-using Yooshina.Domain.Models;
+using Yooshina.CMSCore.Model;
 using Yooshina.Repository;
 
 namespace Yooshina.CMSCore {
@@ -23,27 +21,10 @@ namespace Yooshina.CMSCore {
 
 			modelBuilder.RegisterEntities(typeToRegisters).RegiserConvention();
 
-			//RegisterEntities(modelBuilder, typeToRegisters);
+			base.OnModelCreating(modelBuilder);
 
-			//RegiserConvention(modelBuilder);
-
-			//base.OnModelCreating(modelBuilder);
-
-			//RegisterCustomMappings(modelBuilder, typeToRegisters);
+			modelBuilder.Build();
 		}
 
-
-
-		private static void RegisterCustomMappings(ModelBuilder modelBuilder, IEnumerable<Type> typeToRegisters) {
-
-			var customModelBuilderTypes = typeToRegisters.Where(x => typeof(ICustomModelBuilder).IsAssignableFrom(x));
-			foreach (var builderType in customModelBuilderTypes) {
-				if (builderType != null && builderType != typeof(ICustomModelBuilder)) {
-					var builder = (ICustomModelBuilder)Activator.CreateInstance(builderType);
-					builder.Build(modelBuilder);
-				}
-			}
-
-		}
 	}
 }

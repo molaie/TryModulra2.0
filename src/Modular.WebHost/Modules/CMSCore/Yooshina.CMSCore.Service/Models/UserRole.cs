@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace Yooshina.CMSCore.Models {
+namespace Yooshina.CMSCore.Model {
 	public class UserRole : IdentityUserRole<long> {
 	}
 }

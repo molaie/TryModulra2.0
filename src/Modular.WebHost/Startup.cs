@@ -18,7 +18,7 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using Modular.Host.Extensions;
 using Yooshina.CMSCore;
-using Yooshina.CMSCore.Models;
+using Yooshina.CMSCore.Model;
 using Yooshina.Core;
 using Yooshina.Domain;
 

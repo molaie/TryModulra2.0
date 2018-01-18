@@ -1,6 +1,6 @@
 ﻿using Yooshina.Domain.Models;
 
-namespace ContentModule.Poco {
+namespace Yooshina.CMSCore.Model {
 
 	public class PortalAddress : Entity {
 

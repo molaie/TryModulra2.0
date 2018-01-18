@@ -1,5 +1,4 @@
-﻿using ContentModule.Poco;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Modular.Modules.Core.Models;
 using Yooshina.Core;

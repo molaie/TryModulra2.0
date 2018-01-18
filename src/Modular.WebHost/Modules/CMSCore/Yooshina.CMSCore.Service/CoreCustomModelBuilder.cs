@@ -1,53 +1,44 @@
-﻿using ContentModule.Poco;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Modular.Modules.Core.Models;
-using Yooshina.Core;
+using Yooshina.CMSCore.Model;
 
-namespace Modular.Modules.Core.Infrastructure {
-	public class CoreCustomModelBuilder : ICustomModelBuilder
-    {
-        public void Build(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<User>()
-                .ToTable("Core_User");
+namespace Yooshina.CMSCore {
+	public static class CoreCustomModelBuilder {
+		public static void Build(this ModelBuilder modelBuilder) {
+			modelBuilder.Entity<User>()
+				.ToTable("User");
 
-            modelBuilder.Entity<Role>()
-                .ToTable("Core_Role");
+			modelBuilder.Entity<Role>()
+				.ToTable("Roles");
 
-            modelBuilder.Entity<IdentityUserClaim<long>>(b =>
-            {
-                b.HasKey(uc => uc.Id);
-                b.ToTable("Core_UserClaim");
-            });
+			modelBuilder.Entity<IdentityUserClaim<long>>(b => {
+				b.HasKey(uc => uc.Id);
+				b.ToTable("UserClaims");
+			});
 
-            modelBuilder.Entity<IdentityRoleClaim<long>>(b =>
-            {
-                b.HasKey(rc => rc.Id);
-                b.ToTable("Core_RoleClaim");
-            });
+			modelBuilder.Entity<IdentityRoleClaim<long>>(b => {
+				b.HasKey(rc => rc.Id);
+				b.ToTable("RoleClaims");
+			});
 
-            modelBuilder.Entity<IdentityUserRole<long>>(b =>
-            {
-                b.HasKey(r => new { r.UserId, r.RoleId });
-                b.ToTable("Core_UserRole");
-            });
+			modelBuilder.Entity<IdentityUserRole<long>>(b => {
+				b.HasKey(r => new { r.UserId, r.RoleId });
+				b.ToTable("UserRoles");
+			});
 
-            modelBuilder.Entity<IdentityUserLogin<long>>(b =>
-            {
-                b.ToTable("Core_UserLogin");
-            });
+			modelBuilder.Entity<IdentityUserLogin<long>>(b => {
+				b.ToTable("UserLogins");
+			});
 
-            modelBuilder.Entity<IdentityUserToken<long>>(b =>
-            {
-                b.ToTable("Core_UserToken");
-            });
+			modelBuilder.Entity<IdentityUserToken<long>>(b => {
+				b.ToTable("UserTokens");
+			});
 
 			//modelBuilder.Entity<Portal>
 
 
 
 
-        }
-    }
+		}
+	}
 }
