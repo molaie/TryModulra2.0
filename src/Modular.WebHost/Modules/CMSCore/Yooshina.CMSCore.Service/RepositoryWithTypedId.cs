@@ -5,6 +5,7 @@ using Yooshina.Domain.Models;
 
 namespace Yooshina.CMSCore {
 	public class RepositoryWithTypedId<T, TId> : IRepositoryWithTypedId<T, TId> where T : class, IEntityWithTypedId<TId> {
+
 		public RepositoryWithTypedId(YooshinaDbContext context) {
 			Context = context;
 			DbSet = Context.Set<T>();

@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Yooshina.CMSCore.Models;
 using Yooshina.Core;
 using Yooshina.Domain.Models;
+using Yooshina.Repository;
 
 namespace Yooshina.CMSCore {
 
@@ -19,35 +20,16 @@ namespace Yooshina.CMSCore {
 			List<Type> typeToRegisters = new List<Type>();
 			typeToRegisters.AddRange(Assembly.GetAssembly(typeof(YooshinaDbContext)).DefinedTypes.Select(t => t.AsType()));
 
-			RegisterEntities(modelBuilder, typeToRegisters);
 
-			RegiserConvention(modelBuilder);
+			modelBuilder.RegisterEntities(typeToRegisters).RegiserConvention();
 
-			base.OnModelCreating(modelBuilder);
+			//RegisterEntities(modelBuilder, typeToRegisters);
 
-			RegisterCustomMappings(modelBuilder, typeToRegisters);
-		}
+			//RegiserConvention(modelBuilder);
 
+			//base.OnModelCreating(modelBuilder);
 
-		private static void RegisterEntities(ModelBuilder modelBuilder, IEnumerable<Type> typeToRegisters) {
-			var entityTypes = typeToRegisters.Where(x => x.GetTypeInfo().IsSubclassOf(typeof(Entity)) && !x.GetTypeInfo().IsAbstract);
-			foreach (var type in entityTypes) {
-				modelBuilder.Entity(type);
-			}
-		}
-
-
-
-
-
-		private static void RegiserConvention(ModelBuilder modelBuilder) {
-			foreach (var entity in modelBuilder.Model.GetEntityTypes()) {
-				if (entity.ClrType.Namespace != null) {
-					var nameParts = entity.ClrType.Namespace.Split('.');
-					var tableName = string.Concat(nameParts[2], "_", entity.ClrType.Name);
-					modelBuilder.Entity(entity.Name).ToTable(tableName);
-				}
-			}
+			//RegisterCustomMappings(modelBuilder, typeToRegisters);
 		}
 
 
