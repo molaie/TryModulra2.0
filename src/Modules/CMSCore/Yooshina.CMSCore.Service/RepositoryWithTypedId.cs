@@ -4,7 +4,7 @@ using Yooshina.Domain;
 using Yooshina.Domain.Models;
 
 namespace Yooshina.CMSCore {
-	public class RepositoryWithTypedId<T, TId> : IRepositoryWithTypedId<T, TId> where T : class, IEntityWithTypedId<TId> {
+	public class RepositoryWithTypedId<T, TId> : IRepositoryWithTypedId<T, TId> where T : class, IEntityWithTypedId<TId>, new() {
 
 		public RepositoryWithTypedId(YooshinaDbContext context) {
 			Context = context;
@@ -29,6 +29,10 @@ namespace Yooshina.CMSCore {
 
 		public void Remove(T entity) {
 			DbSet.Remove(entity);
+		}
+
+		public T Create() {
+			return new T();
 		}
 	}
 }

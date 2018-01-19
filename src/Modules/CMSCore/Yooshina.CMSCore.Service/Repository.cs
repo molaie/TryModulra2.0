@@ -3,7 +3,7 @@ using Yooshina.Domain.Models;
 
 namespace Yooshina.CMSCore {
 	public class Repository<T> : RepositoryWithTypedId<T, long>, IRepository<T>
-		where T : class, IEntityWithTypedId<long> {
+		where T : class, IEntityWithTypedId<long>, new() {
 
 
 		public Repository(YooshinaDbContext context) : base(context) {
