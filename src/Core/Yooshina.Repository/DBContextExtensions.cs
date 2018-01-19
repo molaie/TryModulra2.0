@@ -31,16 +31,16 @@ namespace Yooshina.Repository {
 		}
 
 
-		public static void RegisterCustomMappings(this ModelBuilder modelBuilder, IEnumerable<Type> typeToRegisters) {
-			var customModelBuilderTypes = typeToRegisters.Where(x => typeof(ICustomModelBuilder).IsAssignableFrom(x));
-			foreach (var builderType in customModelBuilderTypes) {
-				if (builderType != null && builderType != typeof(ICustomModelBuilder)) {
-					var builder = (ICustomModelBuilder)Activator.CreateInstance(builderType);
-					builder.Build(modelBuilder);
-				}
-			}
+		//public static void RegisterCustomMappings(this ModelBuilder modelBuilder, IEnumerable<Type> typeToRegisters) {
+		//	var customModelBuilderTypes = typeToRegisters.Where(x => typeof(ICustomModelBuilder).IsAssignableFrom(x));
+		//	foreach (var builderType in customModelBuilderTypes) {
+		//		if (builderType != null && builderType != typeof(ICustomModelBuilder)) {
+		//			var builder = (ICustomModelBuilder)Activator.CreateInstance(builderType);
+		//			builder.Build(modelBuilder);
+		//		}
+		//	}
 
-		}
+		//}
 
 	}
 }
