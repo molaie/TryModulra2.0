@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 namespace Yooshina.Core {
-	public interface ICustomModelBuilder {
-		void Build(ModelBuilder modelBuilder);
-	}
+	//public interface ICustomModelBuilder {
+	//	void Build(ModelBuilder modelBuilder);
+	//}
 }
