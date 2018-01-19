@@ -11,6 +11,7 @@ using Yooshina.CMSCore.Model.AccountViewModels;
 using Yooshina.CMSCore.Services;
 
 namespace Yooshina.CMSCore.Web.Controllers {
+
 	[Authorize]
 	public class AccountController : Controller {
 		private readonly UserManager<User> _userManager;
