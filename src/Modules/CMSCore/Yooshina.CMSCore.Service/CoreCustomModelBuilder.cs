@@ -6,7 +6,7 @@ namespace Yooshina.CMSCore {
 	public static class CoreCustomModelBuilder {
 		public static void Build(this ModelBuilder modelBuilder) {
 			modelBuilder.Entity<User>()
-				.ToTable("User");
+				.ToTable("Users");
 
 			modelBuilder.Entity<Role>()
 				.ToTable("Roles");

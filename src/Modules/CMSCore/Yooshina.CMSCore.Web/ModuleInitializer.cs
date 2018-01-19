@@ -30,8 +30,8 @@ namespace Yooshina.CMSCore.Web {
 
 			container.Configure(_ => {
 				_.For(typeof(IRepository<>)).Use(typeof(Repository<>));
-				//_.For<IEmailSender>().Use<AuthMessageSender>();
-				//_.For<ISmsSender>().Use<AuthMessageSender>();
+				_.For<IEmailSender>().Use<AuthMessageSender>();
+				_.For<ISmsSender>().Use<AuthMessageSender>();
 				_.Scan(x => {
 					x.Assembly(asm);
 					x.AssemblyContainingType<IEmailSender>();
