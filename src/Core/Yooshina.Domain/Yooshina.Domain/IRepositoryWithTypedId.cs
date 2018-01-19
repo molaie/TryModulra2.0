@@ -11,5 +11,8 @@ namespace Yooshina.Domain {
 		void SaveChange();
 
 		void Remove(T entity);
+
+		T Create();
+
 	}
 }
