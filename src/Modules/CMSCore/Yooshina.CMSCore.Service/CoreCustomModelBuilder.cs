@@ -34,8 +34,17 @@ namespace Yooshina.CMSCore {
 				b.ToTable("UserTokens");
 			});
 
-			//modelBuilder.Entity<Portal>
+			modelBuilder.Entity<Portal>()
+				.ToTable("Portals");
 
+			modelBuilder.Entity<PortalAddress>()
+				.ToTable("PortalAddresses");
+
+
+			modelBuilder.Entity<PortalAddress>()
+				.HasOne<Portal>()
+				.WithMany(x => x.PortalAddresses)
+				.HasForeignKey(x => x.PortalId);
 
 
 
