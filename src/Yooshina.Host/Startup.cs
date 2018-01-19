@@ -4,21 +4,17 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Loader;
-using Autofac;
-using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using Modular.Host.Extensions;
+using StructureMap;
 using Yooshina.CMSCore;
-using Yooshina.CMSCore.Model;
 using Yooshina.Core;
 using Yooshina.Domain;
 
@@ -40,44 +36,42 @@ namespace Modular.Host {
 
 			LoadInstalledModules();
 
-			services.AddDbContext<YooshinaDbContext>(options =>
-				options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-			services.AddIdentity<User, Role>()
-				.AddEntityFrameworkStores<YooshinaDbContext>()
-				.AddDefaultTokenProviders();
-
 			services.Configure<RazorViewEngineOptions>(options => {
 				options.ViewLocationExpanders.Add(new ModuleViewLocationExpander());
 			});
 
 			var mvcBuilder = services.AddMvc();
+
+			//Structure Map
+			var container = new Container();
+
 			var moduleInitializerInterface = typeof(IModuleInitializer);
 			foreach (var module in modules) {
 				// Register controller from modules
 				mvcBuilder.AddApplicationPart(module.Assembly);
 
-				// Register dependency in modules
+				// DI in modules
+				//each module is responsible for extra DI she needs
 				var moduleInitializerType = module.Assembly.GetTypes().Where(x => typeof(IModuleInitializer).IsAssignableFrom(x)).FirstOrDefault();
 				if (moduleInitializerType != null && moduleInitializerType != typeof(IModuleInitializer)) {
 					var moduleInitializer = (IModuleInitializer)Activator.CreateInstance(moduleInitializerType);
-					moduleInitializer.Init(services);
+					moduleInitializer.Init(services, container, module.Assembly, Configuration);
 				}
 			}
 
-			// TODO: break down to new method in new class
-			var builder = new ContainerBuilder();
-			builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>));
-			builder.RegisterGeneric(typeof(RepositoryWithTypedId<,>)).As(typeof(IRepositoryWithTypedId<,>));
-			foreach (var module in GlobalConfiguration.Modules) {
-				builder.RegisterAssemblyTypes(module.Assembly).AsImplementedInterfaces();
-			}
+			//main assembly DI
+			container.Configure(_ => {
+				_.For(typeof(IRepository<>)).Use(typeof(Repository<>));
+				_.Scan(x => {
+					x.TheCallingAssembly();
+					x.AssembliesFromApplicationBaseDirectory();
 
-			builder.RegisterInstance(Configuration);
-			builder.RegisterInstance(_hostingEnvironment);
-			builder.Populate(services);
-			var container = builder.Build();
-			return container.Resolve<IServiceProvider>();
+					x.WithDefaultConventions();
+				});
+				_.Populate(services);
+			});
+
+			return container.GetInstance<IServiceProvider>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
