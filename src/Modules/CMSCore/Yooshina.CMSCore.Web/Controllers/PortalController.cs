@@ -25,6 +25,7 @@ namespace Yooshina.CMSCore.Web.Controllers {
 		public ViewResult Index() {
 			var allPortals = _portalRepo.Query().Select(
 				x=> new PortalViewModel() {
+                    Id = x.Id,
 					Alias = x.Alias,
 					Direction = x.Direction,
 					Favicon = x.Favicon,

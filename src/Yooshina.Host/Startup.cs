@@ -117,7 +117,7 @@ namespace Modular.Host {
 
 			foreach (var moduleFolder in moduleFolders) {
 				var binFolder = new DirectoryInfo(Path.Combine(moduleFolder.FullName, "bin"));
-				if (!binFolder.Exists) {
+				if (!binFolder.Exists || binFolder.Name.ToLower().Contains(".web")) {
 					continue;
 				}
 
