@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2020
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{10D8E54E-1058-4834-A19E-64515D0E9F6D}"
 EndProject
@@ -31,6 +31,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yooshina.CMSCore.Web", "src\Modules\CMSCore\Yooshina.CMSCore.Web\Yooshina.CMSCore.Web.csproj", "{7E93685B-61B8-49C0-B8BF-2B9166E12E8F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yooshina.Host", "src\Yooshina.Host\Yooshina.Host.csproj", "{F51F8546-15F5-495C-9D4F-A05CC523E374}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{5D0EC749-1122-42A9-BA81-D13071F20ACD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore.MvcPager", "src\Components\AspNetCore.MvcPager\AspNetCore.MvcPager.csproj", "{C1ECE64E-68F4-4E3C-BF3F-BE0D037DB557}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -66,6 +70,10 @@ Global
 		{F51F8546-15F5-495C-9D4F-A05CC523E374}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F51F8546-15F5-495C-9D4F-A05CC523E374}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F51F8546-15F5-495C-9D4F-A05CC523E374}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1ECE64E-68F4-4E3C-BF3F-BE0D037DB557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1ECE64E-68F4-4E3C-BF3F-BE0D037DB557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1ECE64E-68F4-4E3C-BF3F-BE0D037DB557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1ECE64E-68F4-4E3C-BF3F-BE0D037DB557}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +90,8 @@ Global
 		{42F8C41B-C6FB-4AE9-A6FD-10015DD11376} = {AEC790C5-192D-495C-B03D-9658C8FFF7BD}
 		{7E93685B-61B8-49C0-B8BF-2B9166E12E8F} = {AEC790C5-192D-495C-B03D-9658C8FFF7BD}
 		{F51F8546-15F5-495C-9D4F-A05CC523E374} = {10D8E54E-1058-4834-A19E-64515D0E9F6D}
+		{5D0EC749-1122-42A9-BA81-D13071F20ACD} = {10D8E54E-1058-4834-A19E-64515D0E9F6D}
+		{C1ECE64E-68F4-4E3C-BF3F-BE0D037DB557} = {5D0EC749-1122-42A9-BA81-D13071F20ACD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {808D0F02-7A1D-4C2D-B3EC-C5FE40B6ED47}
