@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <Compile Remove="Modules\**" />
-    <Compile Remove="wwwroot\**\*;node_modules;App_Data;Core;Themes" />
+    <Compile Remove="wwwroot\**\*;App_Data;Core;Themes" />
     <Content Remove="Modules\**" />
     <EmbeddedResource Remove="Modules\**" />
     <None Remove="Modules\**" />
@@ -34,8 +34,6 @@
   <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
     <Exec Command="npm install" />
     <Exec Command="bower install" />
-    <Exec Command="gulp clean" />
-    <Exec Command="gulp min" />
   </Target>
 
   <ItemGroup>
