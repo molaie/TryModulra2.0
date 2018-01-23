@@ -40,6 +40,9 @@ namespace Modular.Host {
 				options.ViewLocationExpanders.Add(new ModuleViewLocationExpander());
 			});
 
+
+			services.AddLocalization(options => options.ResourcesPath = "Resources");
+
 			var mvcBuilder = services.AddMvc();
 
 			//Structure Map
