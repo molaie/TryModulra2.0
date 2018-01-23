@@ -1,23 +1,23 @@
-﻿@model IEnumerable<Yooshina.CMSCore.ViewModels.PortalViewModels.PortalViewModel>
+﻿@model PagedModel<Yooshina.CMSCore.ViewModels.PortalViewModels.PortalViewModel>
 
 
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Title)
+                @Localizer["TItle"]
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Alias)
+                @Localizer["Alias"]
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Direction)
+                @Localizer["Direction"]
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.Model)
         {
             <tr>
                 <td>
