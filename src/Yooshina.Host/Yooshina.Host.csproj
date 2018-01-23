@@ -3,9 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <PreserveCompilationContext>true</PreserveCompilationContext>
-    <AssemblyName>Modular.WebHost</AssemblyName>
+    <AssemblyName>Yooshina.Host</AssemblyName>
     <OutputType>Exe</OutputType>
-    <PackageId>Modular.WebHost</PackageId>
+    <PackageId>Yooshina.Host</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,11 +30,6 @@
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
     <PackageReference Include="StructureMap.Microsoft.DependencyInjection" Version="1.4.0" />
   </ItemGroup>
-
-  <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
-    <Exec Command="npm install" />
-    <Exec Command="bower install" />
-  </Target>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
