@@ -260,3 +260,6 @@ paket-files/
 __pycache__/
 *.pyc
 /src/Yooshina.Host/Modules/*
+/src/Yooshina.Host/wwwroot/lib/font-awesome/less/*
+/src/Yooshina.Host/wwwroot/lib/font-awesome/scss/*
+/src/Yooshina.Host/wwwroot/lib/font-awesome/*.txt
