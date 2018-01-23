@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AspNetCore.MvcPager;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -15,17 +16,34 @@ namespace Yooshina.CMSCore.Web.Controllers {
 	public class PortalController : Controller {
 
 
-		private IRepository<Portal> _portalRepo;
+		private IRepository<Portal> _Repo;
+		int PageSize = 4;
 
 
 		public PortalController(IRepository<Portal> portalRepo) {
-			_portalRepo = portalRepo;
+			_Repo = portalRepo;
 		}
 
-		public ViewResult Index() {
-			var allPortals = _portalRepo.Query().Select(
-				x=> new PortalViewModel() {
-                    Id = x.Id,
+		public ViewResult Index(int? page , string title, string alias) {
+
+			var cPage = page??1;
+			if (cPage <1) {
+				cPage = 1;
+			}
+			var result = _Repo.Query();
+			if (!string.IsNullOrWhiteSpace(title)) {
+				result = result.Where(x=> x.Title.Contains(title));
+			}
+			if (!string.IsNullOrWhiteSpace(alias)) {
+				result = result.Where(x => x.Alias.Contains(alias));
+			}
+
+			var finalResult = result
+				.OrderByDescending(x => x.Id)
+				.Skip(PageSize * (cPage - 1))
+				.Take(PageSize)
+				.Select(x => new PortalViewModel() {
+					Id = x.Id,
 					Alias = x.Alias,
 					Direction = x.Direction,
 					Favicon = x.Favicon,
@@ -33,9 +51,10 @@ namespace Yooshina.CMSCore.Web.Controllers {
 					Language = x.Language,
 					Title = x.Title
 				});
-			return View(allPortals);
+
+			return View(
+				new PagedModel<PortalViewModel>(finalResult.AsEnumerable(), new PagingInfo())
+			);
 		}
-
-
 	}
 }
