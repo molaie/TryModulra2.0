@@ -24,6 +24,7 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Components\AspNetCore.MvcPager\AspNetCore.MvcPager.csproj" />
     <ProjectReference Include="..\Yooshina.CMSCore.Service\Yooshina.CMSCore.Service.csproj" />
   </ItemGroup>
 
