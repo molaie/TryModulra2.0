@@ -11,9 +11,10 @@ using Yooshina.CMSCore;
 namespace Yooshina.CMSCore.Service.Migrations
 {
     [DbContext(typeof(YooshinaDbContext))]
-    partial class YooshinaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180124162942_addedModule")]
+    partial class addedModule
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
