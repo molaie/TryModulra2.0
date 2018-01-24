@@ -8,6 +8,9 @@
 
 	<ItemGroup>
 		<Compile Remove="BaseContext.cs" />
+		<Compile Remove="Migrations\20180124142347_added module.cs" />
+		<Compile Remove="Migrations\20180124143634_addedModule.cs" />
+		<Compile Remove="Migrations\20180124143704_addedModule.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
