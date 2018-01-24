@@ -28,6 +28,7 @@
     <PackageReference Include="Dotnettency.AspNetCore" Version="2.0.0-unstable.91" />
     <PackageReference Include="Dotnettency.TenantFileSystem" Version="2.0.0-unstable.91" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" />
     <PackageReference Include="StructureMap.Microsoft.DependencyInjection" Version="1.4.0" />
   </ItemGroup>
 
