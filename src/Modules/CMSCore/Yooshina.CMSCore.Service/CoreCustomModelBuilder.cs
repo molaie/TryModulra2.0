@@ -46,6 +46,9 @@ namespace Yooshina.CMSCore {
 				.WithMany(x => x.PortalAddresses)
 				.HasForeignKey(x => x.PortalId);
 
+			modelBuilder.Entity<YooshinaModule>()
+				.ToTable("YooshinaModule");
+
 
 
 		}
