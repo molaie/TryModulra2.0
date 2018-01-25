@@ -39,9 +39,7 @@ namespace Modular.Host {
 			services.Configure<RazorViewEngineOptions>(options => {
 				options.ViewLocationExpanders.Add(new ModuleViewLocationExpander());
 			});
-
-
-			services.AddLocalization(options => options.ResourcesPath = "Resources");
+			
 
 			var mvcBuilder = services.AddMvc();
 
@@ -61,6 +59,8 @@ namespace Modular.Host {
 					moduleInitializer.Init(services, container, module.Assembly, Configuration);
 				}
 			}
+
+			mvcBuilder.AddViewLocalization();
 
 			//main assembly DI
 			container.Configure(_ => {
