@@ -1,0 +1,14 @@
+﻿.yooshina-panel-nav.active {
+    width: 235px;
+}
+
+.yooshina-panel-nav {
+    width: 50px;
+    height: calc( 100% - 0px);
+    background-color: #515151;
+    position: absolute;
+    top: 0px;
+    margin-top: 50px;
+    z-index: 10;
+    transition: all 0.3s;
+}
