@@ -34,7 +34,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yooshina.Host", "src\Yooshi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{5D0EC749-1122-42A9-BA81-D13071F20ACD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore.MvcPager", "src\Components\AspNetCore.MvcPager\AspNetCore.MvcPager.csproj", "{C1ECE64E-68F4-4E3C-BF3F-BE0D037DB557}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.Components", "src\Components\AspNetCore.MvcPager\AspNetCore.Components.csproj", "{C1ECE64E-68F4-4E3C-BF3F-BE0D037DB557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yooshina.Web.Common", "Yooshina.Web.Common\Yooshina.Web.Common.csproj", "{E131BFB9-2FB1-4C00-8228-B441DB51F1BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,6 +76,10 @@ Global
 		{C1ECE64E-68F4-4E3C-BF3F-BE0D037DB557}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1ECE64E-68F4-4E3C-BF3F-BE0D037DB557}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1ECE64E-68F4-4E3C-BF3F-BE0D037DB557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E131BFB9-2FB1-4C00-8228-B441DB51F1BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E131BFB9-2FB1-4C00-8228-B441DB51F1BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E131BFB9-2FB1-4C00-8228-B441DB51F1BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E131BFB9-2FB1-4C00-8228-B441DB51F1BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +98,7 @@ Global
 		{F51F8546-15F5-495C-9D4F-A05CC523E374} = {10D8E54E-1058-4834-A19E-64515D0E9F6D}
 		{5D0EC749-1122-42A9-BA81-D13071F20ACD} = {10D8E54E-1058-4834-A19E-64515D0E9F6D}
 		{C1ECE64E-68F4-4E3C-BF3F-BE0D037DB557} = {5D0EC749-1122-42A9-BA81-D13071F20ACD}
+		{E131BFB9-2FB1-4C00-8228-B441DB51F1BC} = {ACCAF020-C4EB-4412-8CA3-41EB27FBDAFB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {808D0F02-7A1D-4C2D-B3EC-C5FE40B6ED47}
