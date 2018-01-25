@@ -9,6 +9,7 @@ using System.Text;
 using Yooshina.CMSCore.Model;
 using Yooshina.CMSCore.ViewModels.PortalViewModels;
 using Yooshina.Domain;
+using Yooshina.Web.Common;
 
 namespace Yooshina.CMSCore.Web.Controllers {
 
@@ -24,6 +25,8 @@ namespace Yooshina.CMSCore.Web.Controllers {
 			_Repo = portalRepo;
 		}
 
+
+		[ViewLayout("_Dashboard")]
 		public ViewResult Index(int? page , string title, string alias) {
 
 			var cPage = page??1;
