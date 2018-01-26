@@ -1,14 +1,156 @@
-﻿.yooshina-panel-nav.active {
-    width: 235px;
+﻿
+.ex-col-menu {
+    text-align: left;
 }
+
+a#yooshina-toogle-menu i.x {
+    display: none;
+}
+
+
+a#yooshina-toogle-menu.isopen i.o {
+    display: none;
+}
+
+a#yooshina-toogle-menu.isopen i.x {
+    display: inline-block;
+}
+
 
 .yooshina-panel-nav {
     width: 50px;
-    height: calc( 100% - 0px);
-    background-color: #515151;
-    position: absolute;
-    top: 0px;
-    margin-top: 50px;
-    z-index: 10;
-    transition: all 0.3s;
+    float: left;
+}
+
+
+.panel-container {
+    overflow: hidden;
+}
+
+
+
+.yooshina-menu {
+    list-style: none;
+}
+
+    .yooshina-menu > li {
+        position: relative;
+    }
+
+    .yooshina-menu, .yooshina-menu ul, .yooshina-menu li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+
+        .yooshina-menu > li > ul {
+            position: absolute;
+            left: 50px;
+            top: 0px;
+            width: 210px;
+            background-color: #555;
+            visibility: hidden;
+            display: none;
+        }
+
+        .yooshina-menu ul {
+            overflow: hidden;
+        }
+
+
+        .yooshina-menu li ul {
+            overflow: hidden;
+        }
+
+        .yooshina-menu li a {
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            padding-left: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #515151;
+        }
+
+        .yooshina-menu li li a {
+            color: #eaeaea;
+        }
+
+        .yooshina-menu li ul a {
+            padding-left: 10px;
+        }
+
+        .yooshina-menu > li > a > span {
+            display: none;
+            margin-left: 8px;
+        }
+
+
+yooshinanav.active .yooshina-menu > li > a > span {
+    display: inline;
+}
+
+.yooshina-menu > li:hover > ul {
+    visibility: visible;
+    display: block;
+}
+
+
+.yooshina-menu > li > a {
+    color: #D4D4D4;
+    font-size: 13px;
+    padding-left: 13px;
+    border-bottom: 1px solid #585858;
+}
+
+.yooshina-menu li.active > a {
+    color: #DDDDDD;
+    background: #373737;
+}
+
+.yooshina-menu li a i {
+    font-size: 18px;
+}
+
+.yooshina-menu li li a::before {
+    content: "\f101";
+    font-size: 14px;
+    font-family: FontAwesome;
+    margin-right: 10px;
+    margin-left: 4px;
+    transition: margin ease 0.3s;
+    float: left;
+}
+
+.haschilds > ul {
+    display: none;
+}
+
+.haschilds > ul {
+    background-color: #616161;
+}
+
+
+.haschilds.isopen > ul {
+    display: block;
+}
+
+.yooshina-menu li li a:hover {
+    color: #FFFFFF;
+    background-color: #373737;
+}
+
+
+    .yooshina-menu li li a:hover::before {
+        margin-right: 20px;
+    }
+
+
+.yooshina-menu {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

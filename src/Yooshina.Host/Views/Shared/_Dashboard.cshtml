@@ -7,13 +7,17 @@
 
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/panel.css" />
+        <link rel="stylesheet"
+              asp-href-include="/lib/font-awesome/css/font-awesome.css" />
     </environment>
     <environment names="Staging,Production">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/panel.min.css" asp-append-version="true" />
+        <link rel="stylesheet"
+              asp-href-include="/lib/font-awesome/css/font-awesome.css" />
     </environment>
 </head>
 <body>
@@ -22,15 +26,12 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <header id="panelheader" class="yooshina-panel-header">
-
+                <header id="panelheader" class="yooshina-panel-header text-right">
+                    @await Html.PartialAsync("_LoginPartial")
                 </header>
             </div>
             <div class="col-12">
-                <div class="panel-menu-container">
-                    <nav id="toranjnav" class="yooshina-panel-nav" runat="server" data-mc="2" clientidmode="static">
-                    </nav>
-                </div>
+                @await Html.PartialAsync("_Menu")
                 <div class="panel-container">
                     @RenderBody()
                 </div>
@@ -61,14 +62,14 @@
                     <li><a asp-controller="TestB" asp-action="Index">Test Module B</a></li>
                     <li><a href="/ModuleA/logo.png" target="_blank">Static content from module A</a></li>
                 </ul>
-                @await Html.PartialAsync("_LoginPartial")
+
             </div>
         </div>
     </div>
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/site.js"></script>
     </environment>
     <environment names="Staging,Production">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
