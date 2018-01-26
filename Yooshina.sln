@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{10D8E54E-1058-4834-A19E-64515D0E9F6D}"
 EndProject
@@ -36,7 +36,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCore.Components", "src\Components\AspNetCore.MvcPager\AspNetCore.Components.csproj", "{C1ECE64E-68F4-4E3C-BF3F-BE0D037DB557}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yooshina.Web.Common", "Yooshina.Web.Common\Yooshina.Web.Common.csproj", "{E131BFB9-2FB1-4C00-8228-B441DB51F1BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yooshina.Web.Common", "Yooshina.Web.Common\Yooshina.Web.Common.csproj", "{E131BFB9-2FB1-4C00-8228-B441DB51F1BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{40A491D6-3BCF-4F1D-9100-8D9DAFD74651}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yooshina.Content.Service", "src\Modules\Content\Yooshina.Content.Service\Yooshina.Content.Service.csproj", "{7036B175-8B45-44B7-8D6A-7576B1A1BF82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yooshina.Content.Web", "src\Modules\Content\Yooshina.Content.Web\Yooshina.Content.Web.csproj", "{85E74879-9EB0-4C3F-B82D-8FCFAC1884BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,6 +86,14 @@ Global
 		{E131BFB9-2FB1-4C00-8228-B441DB51F1BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E131BFB9-2FB1-4C00-8228-B441DB51F1BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E131BFB9-2FB1-4C00-8228-B441DB51F1BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7036B175-8B45-44B7-8D6A-7576B1A1BF82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7036B175-8B45-44B7-8D6A-7576B1A1BF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7036B175-8B45-44B7-8D6A-7576B1A1BF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7036B175-8B45-44B7-8D6A-7576B1A1BF82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85E74879-9EB0-4C3F-B82D-8FCFAC1884BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85E74879-9EB0-4C3F-B82D-8FCFAC1884BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85E74879-9EB0-4C3F-B82D-8FCFAC1884BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85E74879-9EB0-4C3F-B82D-8FCFAC1884BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,6 +113,9 @@ Global
 		{5D0EC749-1122-42A9-BA81-D13071F20ACD} = {10D8E54E-1058-4834-A19E-64515D0E9F6D}
 		{C1ECE64E-68F4-4E3C-BF3F-BE0D037DB557} = {5D0EC749-1122-42A9-BA81-D13071F20ACD}
 		{E131BFB9-2FB1-4C00-8228-B441DB51F1BC} = {ACCAF020-C4EB-4412-8CA3-41EB27FBDAFB}
+		{40A491D6-3BCF-4F1D-9100-8D9DAFD74651} = {10BAC5B3-1A22-401D-90B4-146E07F71CE6}
+		{7036B175-8B45-44B7-8D6A-7576B1A1BF82} = {40A491D6-3BCF-4F1D-9100-8D9DAFD74651}
+		{85E74879-9EB0-4C3F-B82D-8FCFAC1884BE} = {40A491D6-3BCF-4F1D-9100-8D9DAFD74651}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {808D0F02-7A1D-4C2D-B3EC-C5FE40B6ED47}
