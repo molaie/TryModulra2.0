@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Yooshina.Domain.Models;
 
 namespace Yooshina.Content.Model {
@@ -9,7 +7,7 @@ namespace Yooshina.Content.Model {
 		public string Title { get; set; }
 		public string Description { get; set; }
 		public string Slug { get; set; }
-		public int? ParentId { get; set; }
+		public long? ParentId { get; set; }
 		public int Ordering { get; set; }
 		public bool Enabled { get; set; }
 		public virtual ContentCategory Parent { get; set; }
