@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
-using Microsoft.Extensions.DependencyInjection;
-using StructureMap;
-using Yooshina.CMSCore.Model;
-using Yooshina.CMSCore.Services;
-using Yooshina.Core;
-using Yooshina.Domain;
+﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
+using StructureMap;
 using Yooshina.Content.Model;
+using Yooshina.Core;
 
 namespace Yooshina.CMSCore.Web {
 
