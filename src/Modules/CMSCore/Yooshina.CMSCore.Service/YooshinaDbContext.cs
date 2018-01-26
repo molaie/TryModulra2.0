@@ -11,7 +11,7 @@ namespace Yooshina.CMSCore {
 
 	public class YooshinaDbContext : IdentityDbContext<User, Role, long> {
 
-		public YooshinaDbContext(DbContextOptions options) : base(options) {
+		public YooshinaDbContext(DbContextOptions<YooshinaDbContext> options) : base(options) {
 		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder) {

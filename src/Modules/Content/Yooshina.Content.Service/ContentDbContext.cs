@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Yooshina.CMSCore.Model;
 using Yooshina.Repository;
 
 namespace Yooshina.CMSCore {
 
 	public class ContentDbContext : DbContext {
 
-		public ContentDbContext(DbContextOptions options) : base(options) {
+		public ContentDbContext(DbContextOptions<ContentDbContext> options) : base(options) {
 		}
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder) {
