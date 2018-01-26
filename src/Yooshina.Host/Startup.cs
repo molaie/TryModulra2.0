@@ -39,7 +39,7 @@ namespace Modular.Host {
 			services.Configure<RazorViewEngineOptions>(options => {
 				options.ViewLocationExpanders.Add(new ModuleViewLocationExpander());
 			});
-			
+
 
 			var mvcBuilder = services.AddMvc();
 
@@ -59,6 +59,14 @@ namespace Modular.Host {
 					moduleInitializer.Init(services, container, module.Assembly, Configuration);
 				}
 			}
+
+
+			//Does not works. see https://github.com/dotnet/core-setup/issues/2981
+			//mvcBuilder.ConfigureApplicationPartManager(manager => {
+			//	var oldMetadataReferenceFeatureProvider = manager.FeatureProviders.First(f => f is MetadataReferenceFeatureProvider);
+			//	manager.FeatureProviders.Remove(oldMetadataReferenceFeatureProvider);
+			//	manager.FeatureProviders.Add(new ReferencesMetadataReferenceFeatureProvider());
+			//});
 
 			mvcBuilder.AddViewLocalization();
 
