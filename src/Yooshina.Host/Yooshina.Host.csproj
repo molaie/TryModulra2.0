@@ -41,6 +41,7 @@
     <ProjectReference Include="..\Core\Yooshina.Modules\ClassLibrary1\Yooshina.Modules.csproj" />
     <ProjectReference Include="..\Modules\CMSCore\Yooshina.CMSCore.Service\Yooshina.CMSCore.Service.csproj" />
     <ProjectReference Include="..\Modules\CMSCore\Yooshina.CMSCore.Web\Yooshina.CMSCore.Web.csproj" />
+    <ProjectReference Include="..\Modules\Content\Yooshina.Content.Service\Yooshina.Content.Service.csproj" />
   </ItemGroup>
 
 </Project>
