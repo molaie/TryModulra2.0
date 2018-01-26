@@ -21,9 +21,8 @@
     </environment>
 </head>
 <body>
-
-
     <div class="container-fluid">
+        @await Html.PartialAsync("_Menu")
         <div class="row">
             <div class="col-12">
                 <header id="panelheader" class="yooshina-panel-header text-right">
@@ -31,40 +30,13 @@
                 </header>
             </div>
             <div class="col-12">
-                @await Html.PartialAsync("_Menu")
-                <div class="panel-container">
-                    @RenderBody()
-                </div>
+                @RenderBody()
             </div>
         </div>
         <hr />
-        <footer>
+        <footer class="text-center">
             <p>&copy; @DateTime.Now.Year - <a href="http://www.yooshina.com">Yooshina!</a></p>
         </footer>
-    </div>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-controller="Home" asp-action="Index" class="navbar-brand">Modular Sample</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-controller="TestA" asp-action="Index">Test Module A</a></li>
-                    <li><a asp-controller="TestB" asp-action="Index">Test Module B</a></li>
-                    <li><a href="/ModuleA/logo.png" target="_blank">Static content from module A</a></li>
-                </ul>
-
-            </div>
-        </div>
     </div>
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
