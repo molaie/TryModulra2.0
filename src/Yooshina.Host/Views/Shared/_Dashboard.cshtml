@@ -23,20 +23,35 @@
 <body>
     <div class="container-fluid">
         @await Html.PartialAsync("_Menu")
-        <div class="row">
+        <div class="row no-gutters yooshona-panel-container">
             <div class="col-12">
-                <header id="panelheader" class="yooshina-panel-header text-right">
-                    @await Html.PartialAsync("_LoginPartial")
-                </header>
+
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                    <a class="navbar-brand" href="/">Yooshina</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#darknav" aria-controls="darknav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="darknav">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="/">Home <span class="sr-only">Home</span></a>
+                            </li>
+                        </ul>
+                        @await Html.PartialAsync("_LoginPartial")
+                    </div>
+                </nav>
             </div>
             <div class="col-12">
                 @RenderBody()
+
+                <hr />
+                <footer class="text-center">
+                    <p>&copy; @DateTime.Now.Year - <a href="http://www.yooshina.com">Yooshina!</a></p>
+                </footer>
+
             </div>
+
         </div>
-        <hr />
-        <footer class="text-center">
-            <p>&copy; @DateTime.Now.Year - <a href="http://www.yooshina.com">Yooshina!</a></p>
-        </footer>
     </div>
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

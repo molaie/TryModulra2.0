@@ -18,6 +18,11 @@ a#yooshina-toogle-menu.isopen i.x {
 .yooshina-nav {
     width: 50px;
     float: left;
+    background-color: #515151;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    left: 0;
 }
 
     .yooshina-nav.active {
@@ -162,4 +167,9 @@ a#yooshina-toogle-menu.isopen i.x {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+
+.yooshona-panel-container {
+    margin-left: 50px;
 }
