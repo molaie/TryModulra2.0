@@ -1,5 +1,4 @@
-﻿
-.ex-col-menu {
+﻿.ex-col-menu {
     text-align: left;
 }
 
@@ -16,18 +15,19 @@ a#yooshina-toogle-menu.isopen i.x {
     display: inline-block;
 }
 
-
-.yooshina-panel-nav {
+.yooshina-nav {
     width: 50px;
     float: left;
 }
 
+    .yooshina-nav.active {
+        width: 235px;
+        float: left;
+    }
 
 .panel-container {
     overflow: hidden;
 }
-
-
 
 .yooshina-menu {
     list-style: none;
@@ -35,6 +35,7 @@ a#yooshina-toogle-menu.isopen i.x {
 
     .yooshina-menu > li {
         position: relative;
+        /*! height: 45px; */
     }
 
     .yooshina-menu, .yooshina-menu ul, .yooshina-menu li {
@@ -54,39 +55,46 @@ a#yooshina-toogle-menu.isopen i.x {
             display: none;
         }
 
-        .yooshina-menu ul {
-            overflow: hidden;
-        }
+
+.yooshina-nav.active .yooshina-menu > li > ul {
+    left: 235px;
+    width: 210px;
+}
 
 
-        .yooshina-menu li ul {
-            overflow: hidden;
-        }
-
-        .yooshina-menu li a {
-            text-decoration: none;
-            display: block;
-            padding: 10px;
-            padding-left: 10px;
-            cursor: pointer;
-            border-bottom: 1px solid #515151;
-        }
-
-        .yooshina-menu li li a {
-            color: #eaeaea;
-        }
-
-        .yooshina-menu li ul a {
-            padding-left: 10px;
-        }
-
-        .yooshina-menu > li > a > span {
-            display: none;
-            margin-left: 8px;
-        }
+.yooshina-menu ul {
+    overflow: hidden;
+}
 
 
-yooshinanav.active .yooshina-menu > li > a > span {
+.yooshina-menu li ul {
+    overflow: hidden;
+}
+
+.yooshina-menu li a {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #515151;
+}
+
+.yooshina-menu li li a {
+    color: #eaeaea;
+}
+
+.yooshina-menu li ul a {
+    padding-left: 10px;
+}
+
+.yooshina-menu > li > a > span {
+    display: none;
+    margin-left: 8px;
+}
+
+
+.yooshina-nav.active .yooshina-menu > li > a > span {
     display: inline;
 }
 
@@ -101,6 +109,7 @@ yooshinanav.active .yooshina-menu > li > a > span {
     font-size: 13px;
     padding-left: 13px;
     border-bottom: 1px solid #585858;
+    height: 45px;
 }
 
 .yooshina-menu li.active > a {
