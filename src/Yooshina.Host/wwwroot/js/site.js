@@ -5,6 +5,7 @@ $(function () {
     if ($("#yooshinanav").length > 0) {
         if (localStorage.getItem('yooshinamenu') === 'active') {
             $('nav#yooshinanav').addClass('active');
+            $(".yooshona-panel-container").addClass("active");
             setTimeout(function () { $("nav#yooshinanav").toggleClass("in"); }, 200);
             $("a#toranj-toogle-menu").addClass('isopen');
         }
@@ -16,6 +17,7 @@ $(function () {
         $("a#yooshina-toogle-menu").click(function () {
             $(this).toggleClass("isopen");
             $("nav#yooshinanav").toggleClass("active");
+            $(".yooshona-panel-container").toggleClass("active");
             if ($("nav#yooshinanav").hasClass("active")) {
                 setTimeout(function () { $("nav#yooshinanav").toggleClass("in"); }, 200);
             } else {

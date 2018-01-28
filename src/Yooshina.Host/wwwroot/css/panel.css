@@ -23,6 +23,7 @@ a#yooshina-toogle-menu.isopen i.x {
     bottom: 0;
     position: absolute;
     left: 0;
+    transition: width ease 0.3s;
 }
 
     .yooshina-nav.active {
@@ -172,4 +173,9 @@ a#yooshina-toogle-menu.isopen i.x {
 
 .yooshona-panel-container {
     margin-left: 50px;
+    transition: margin ease 0.3s;
 }
+
+    .yooshona-panel-container.active {
+        margin-left: 235px;
+    }
