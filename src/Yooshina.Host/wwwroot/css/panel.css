@@ -104,11 +104,6 @@ a#yooshina-toogle-menu.isopen i.x {
     display: inline;
 }
 
-.yooshina-menu > li:hover > ul {
-    visibility: visible;
-    display: block;
-}
-
 
 .yooshina-menu > li > a {
     color: #D4D4D4;
@@ -179,3 +174,19 @@ a#yooshina-toogle-menu.isopen i.x {
     .yooshona-panel-container.active {
         margin-left: 235px;
     }
+
+
+
+.yooshina-menu li li a.parent::after, .in .yooshina-menu > li a.parent::after {
+    font-family: FontAwesome;
+    content: "\f105";
+    float: right;
+    margin-right: 6px;
+}
+
+
+.yooshina-menu > li:hover > ul {
+    visibility: visible;
+    display: block;
+}
+
