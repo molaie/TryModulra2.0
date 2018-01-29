@@ -24,6 +24,7 @@ a#yooshina-toogle-menu.isopen i.x {
     position: absolute;
     left: 0;
     transition: width ease 0.3s;
+    z-index: 5;
 }
 
     .yooshina-nav.active {
@@ -49,6 +50,16 @@ a#yooshina-toogle-menu.isopen i.x {
         margin: 0;
         list-style: none;
     }
+
+        .yooshina-menu > li:first-child a {
+            height: 46px;
+            margin-top: 10px
+        }
+
+            .yooshina-menu > li:first-child a i {
+                font-size: 22px;
+            }
+
 
 
         .yooshina-menu > li > ul {
@@ -189,4 +200,3 @@ a#yooshina-toogle-menu.isopen i.x {
     visibility: visible;
     display: block;
 }
-

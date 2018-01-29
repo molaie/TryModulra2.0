@@ -1,6 +1,5 @@
 ﻿@model PagedModel<Yooshina.CMSCore.ViewModels.PortalViewModels.PortalViewModel>
-
-
+Title is : @ViewData["Title"]
 <table class="table">
     <thead>
         <tr>
@@ -17,8 +16,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Model)
-        {
+        @foreach (var item in Model.Model) {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Title)

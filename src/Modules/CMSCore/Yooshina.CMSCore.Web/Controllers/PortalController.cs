@@ -1,11 +1,7 @@
-﻿using AspNetCore.MvcPager;
+﻿using System.Linq;
+using AspNetCore.MvcPager;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Yooshina.CMSCore.Model;
 using Yooshina.CMSCore.ViewModels.PortalViewModels;
 using Yooshina.Domain;
@@ -27,15 +23,17 @@ namespace Yooshina.CMSCore.Web.Controllers {
 
 
 		[ViewLayout("_Dashboard")]
-		public ViewResult Index(int? page , string title, string alias) {
+		public ViewResult Index(int? page, string title, string alias) {
 
-			var cPage = page??1;
-			if (cPage <1) {
+
+			ViewData["Title"] = "Portals";
+			var cPage = page ?? 1;
+			if (cPage < 1) {
 				cPage = 1;
 			}
 			var result = _Repo.Query();
 			if (!string.IsNullOrWhiteSpace(title)) {
-				result = result.Where(x=> x.Title.Contains(title));
+				result = result.Where(x => x.Title.Contains(title));
 			}
 			if (!string.IsNullOrWhiteSpace(alias)) {
 				result = result.Where(x => x.Alias.Contains(alias));
