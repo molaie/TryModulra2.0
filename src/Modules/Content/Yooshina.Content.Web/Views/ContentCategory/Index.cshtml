@@ -1,1 +1,37 @@
-﻿
+﻿@model PagedModel<ContentCategoryViewModel>
+Title is : @ViewData["Title"]
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Localizer["Title"]
+			</th>
+			<th>
+				@Localizer["Alias"]
+			</th>
+			<th>
+				@Localizer["Direction"]
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.Model) {
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Title)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Slug)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Id)
+				</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">@Localizer["Edit"]</a> |
+					<a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">@Localizer["Delete"]</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
