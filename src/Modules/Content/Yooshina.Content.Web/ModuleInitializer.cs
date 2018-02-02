@@ -1,8 +1,9 @@
-﻿using System.Reflection;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StructureMap;
+using System.Reflection;
+using Yooshina.Content;
 using Yooshina.Content.Model;
 using Yooshina.Core;
 
@@ -18,6 +19,7 @@ namespace Yooshina.CMSCore.Web {
 			);
 
 			container.Configure(_ => {
+				_.For(typeof(IContentRepository<>)).Use(typeof(ContentRepository<>));
 				_.Scan(x => {
 					x.Assembly(asm);
 					x.AssemblyContainingType<ContentCategory>();

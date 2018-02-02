@@ -1,20 +1,19 @@
-﻿using System.Linq;
-using AspNetCore.MvcPager;
+﻿using AspNetCore.MvcPager;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using Yooshina.Content.Model;
 using Yooshina.Content.ViewModels;
-using Yooshina.Domain;
 using Yooshina.Web.Common;
 
 namespace Yooshina.Content.Web.Controllers {
 
 	public class ContentCategoryController : Controller {
 
-		private IRepository<ContentCategory> _Repo;
+		private IContentRepository<ContentCategory> _Repo;
 		int PageSize = 4;
 
 
-		public ContentCategoryController(IRepository<ContentCategory> portalRepo) {
+		public ContentCategoryController(IContentRepository<ContentCategory> portalRepo) {
 			_Repo = portalRepo;
 		}
 

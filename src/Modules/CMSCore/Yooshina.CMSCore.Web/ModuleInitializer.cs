@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StructureMap;
+using System;
+using System.Reflection;
 using Yooshina.CMSCore.Model;
 using Yooshina.CMSCore.Services;
 using Yooshina.Core;
-using Yooshina.Domain;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Identity;
 
 namespace Yooshina.CMSCore.Web {
 
@@ -59,7 +56,7 @@ namespace Yooshina.CMSCore.Web {
 
 
 			container.Configure(_ => {
-				_.For(typeof(IRepository<>)).Use(typeof(Repository<>));
+				_.For(typeof(ICoreRepository<>)).Use(typeof(CoreRepository<>));
 				_.For<IEmailSender>().Use<AuthMessageSender>();
 				_.For<ISmsSender>().Use<AuthMessageSender>();
 				_.Scan(x => {

@@ -1,19 +1,15 @@
-﻿using System.Linq;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using Yooshina.Domain;
 using Yooshina.Domain.Models;
 
 namespace Yooshina.CMSCore {
-	public class RepositoryWithTypedId<T, TId> : IRepositoryWithTypedId<T, TId> where T : class, IEntityWithTypedId<TId>, new() {
+	public abstract class RepositoryWithTypedId<T, TId> : IRepositoryWithTypedId<T, TId> where T : class, IEntityWithTypedId<TId>, new() {
 
-		public RepositoryWithTypedId(YooshinaDbContext context) {
-			Context = context;
-			DbSet = Context.Set<T>();
-		}
 
-		protected DbContext Context { get; }
+		protected DbContext Context { get; set; }
 
-		protected DbSet<T> DbSet { get; }
+		protected DbSet<T> DbSet { get; set; }
 
 		public void Add(T entity) {
 			DbSet.Add(entity);

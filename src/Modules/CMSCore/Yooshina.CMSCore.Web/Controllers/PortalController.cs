@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Yooshina.CMSCore.Model;
 using Yooshina.CMSCore.ViewModels.PortalViewModels;
-using Yooshina.Domain;
 using Yooshina.Web.Common;
 
 namespace Yooshina.CMSCore.Web.Controllers {
@@ -14,11 +13,11 @@ namespace Yooshina.CMSCore.Web.Controllers {
 	public class PortalController : Controller {
 
 
-		private IRepository<Portal> _Repo;
+		private ICoreRepository<Portal> _Repo;
 		int PageSize = 4;
 
 
-		public PortalController(IRepository<Portal> portalRepo) {
+		public PortalController(ICoreRepository<Portal> portalRepo) {
 			_Repo = portalRepo;
 		}
 

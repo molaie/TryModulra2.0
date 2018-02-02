@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.Loader;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Razor;
@@ -14,9 +8,13 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using Modular.Host.Extensions;
 using StructureMap;
-using Yooshina.CMSCore;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Loader;
 using Yooshina.Core;
-using Yooshina.Domain;
 
 namespace Modular.Host {
 	public class Startup {
@@ -72,7 +70,7 @@ namespace Modular.Host {
 
 			//main assembly DI
 			container.Configure(_ => {
-				_.For(typeof(IRepository<>)).Use(typeof(Repository<>));
+				//_.For(typeof(IRepository<>)).Use(typeof(Repository<>));
 				_.Scan(x => {
 					x.TheCallingAssembly();
 					x.AssembliesFromApplicationBaseDirectory();

@@ -1,9 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Microsoft.EntityFrameworkCore;
-using Yooshina.Core;
 using Yooshina.Domain.Models;
 
 namespace Yooshina.Repository {
@@ -23,7 +22,7 @@ namespace Yooshina.Repository {
 			foreach (var entity in modelBuilder.Model.GetEntityTypes()) {
 				if (entity.ClrType.Namespace != null) {
 					var nameParts = entity.ClrType.Namespace.Split('.');
-					var tableName = string.Concat(nameParts[2], "_", entity.ClrType.Name);
+					var tableName = string.Concat(nameParts[1], "_", entity.ClrType.Name);
 					modelBuilder.Entity(entity.Name).ToTable(tableName);
 				}
 			}

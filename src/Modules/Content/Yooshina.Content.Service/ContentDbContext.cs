@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Microsoft.EntityFrameworkCore;
 using Yooshina.Repository;
 
-namespace Yooshina.CMSCore {
+namespace Yooshina.Content {
 
 	public class ContentDbContext : DbContext {
 
