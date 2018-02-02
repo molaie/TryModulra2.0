@@ -1,7 +1,7 @@
-﻿using System.Linq;
-using AspNetCore.MvcPager;
+﻿using AspNetCore.MvcPager;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using Yooshina.CMSCore.Model;
 using Yooshina.CMSCore.ViewModels.PortalViewModels;
 using Yooshina.Domain;
@@ -10,6 +10,7 @@ using Yooshina.Web.Common;
 namespace Yooshina.CMSCore.Web.Controllers {
 
 	[Authorize]
+	[ViewLayout("_Dashboard")]
 	public class PortalController : Controller {
 
 
@@ -22,10 +23,8 @@ namespace Yooshina.CMSCore.Web.Controllers {
 		}
 
 
-		[ViewLayout("_Dashboard")]
+
 		public ViewResult Index(int? page, string title, string alias) {
-
-
 			ViewData["Title"] = "Portals";
 			var cPage = page ?? 1;
 			if (cPage < 1) {
@@ -57,5 +56,30 @@ namespace Yooshina.CMSCore.Web.Controllers {
 				new PagedModel<PortalViewModel>(finalResult.AsEnumerable(), new PagingInfo())
 			);
 		}
+
+
+		public ViewResult Create() {
+			ViewData["Title"] = "Create a new portal";
+			return View(new Portal());
+		}
+
+
+		public ViewResult Edit(int portalId) {
+			ViewData["Title"] = "Edit a portal";
+			return View(_Repo.Query().FirstOrDefault(x => x.Id == portalId));
+		}
+
+
+
+
+		//[HttpPost]
+		//public ViewResult Create(Portal P) {
+		//	if (!ModelState.IsValid) {
+		//		return View();
+		//	}
+		//}
+
+
+
 	}
 }

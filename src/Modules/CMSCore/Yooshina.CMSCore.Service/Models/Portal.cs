@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Yooshina.Domain.Models;
 
 namespace Yooshina.CMSCore.Model {
@@ -17,7 +15,6 @@ namespace Yooshina.CMSCore.Model {
 		public string Alias { get; set; }
 		public string Direction { get; set; }
 		public string Language { get; set; }
-		public string Domain { get; set; }
 		public string Favicon { get; set; }
 		public string MetaDescription { get; set; }
 		public string FolderAlias { get; set; }
