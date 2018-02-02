@@ -1,5 +1,6 @@
 ﻿
 using Yooshina.Content;
+using Yooshina.Domain;
 using Yooshina.Domain.Models;
 
 namespace Yooshina.CMSCore {

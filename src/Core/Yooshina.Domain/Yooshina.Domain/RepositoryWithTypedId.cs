@@ -3,7 +3,7 @@ using System.Linq;
 using Yooshina.Domain;
 using Yooshina.Domain.Models;
 
-namespace Yooshina.CMSCore {
+namespace Yooshina.Domain {
 	public abstract class RepositoryWithTypedId<T, TId> : IRepositoryWithTypedId<T, TId> where T : class, IEntityWithTypedId<TId>, new() {
 
 
