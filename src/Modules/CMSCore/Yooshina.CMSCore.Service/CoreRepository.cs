@@ -1,4 +1,5 @@
-﻿using Yooshina.Domain.Models;
+﻿using Yooshina.Domain;
+using Yooshina.Domain.Models;
 
 namespace Yooshina.CMSCore {
 	public class CoreRepository<T> : RepositoryWithTypedId<T, long>, ICoreRepository<T>
