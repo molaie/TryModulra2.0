@@ -1,0 +1,21 @@
+﻿@model ContentCategory
+
+<form asp-action="Create" method="post">
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label asp-for="Title">@Localizer["Title"]</label>
+			<input asp-for="Title" class="form-control">
+		</div>
+		<div class="form-group col-md-6">
+			<label asp-for="Enabled">@Localizer["Enabled"]</label>
+			<input asp-for="Enabled" class="form-control">
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label asp-for="Slug">@Localizer["Slug"]</label>
+			<input asp-for="Slug" class="form-control">
+		</div>
+	</div>
+	<button type="submit" class="btn btn-primary">Create</button>
+</form>

@@ -20,7 +20,7 @@ namespace Yooshina.Content.Web.Controllers {
 
 		[ViewLayout("_Dashboard")]
 		public ViewResult Index(int? page, string title) {
-
+			ViewData["Title"] = "Content Category";
 			var cPage = page ?? 1;
 			if (cPage < 1) {
 				cPage = 1;
@@ -44,5 +44,46 @@ namespace Yooshina.Content.Web.Controllers {
 				new PagedModel<ContentCategoryViewModel>(finalResult.AsEnumerable(), new PagingInfo())
 			);
 		}
+
+
+		public ViewResult Create() {
+			ViewData["Title"] = "Create a new portal";
+			return View(_Repo.Create());
+		}
+
+
+
+		[HttpPost]
+		public ViewResult Create(ContentCategory item) {
+			_Repo.Add(item);
+			_Repo.SaveChange();
+			ViewData["Title"] = "Create a new portal";
+			return View(_Repo.Create());
+		}
+
+
+
+		public ViewResult Edit(long itemId) {
+			ViewData["Title"] = "Edit a portal";
+			return View(_Repo.Query().FirstOrDefault(x => x.Id == itemId));
+		}
+
+
+
+
+
+
+
+
+		[HttpGet]
+		public JsonResult GetChilds(int? parentID) {
+
+			var result = _Repo.Query();
+			result = result.Where(x => x.ParentId == parentID || ((int?)null == x.ParentId && null == parentID));
+
+			return Json(result.AsEnumerable());
+		}
+
+
 	}
 }
