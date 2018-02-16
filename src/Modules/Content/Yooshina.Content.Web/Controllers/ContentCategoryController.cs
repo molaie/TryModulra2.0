@@ -18,8 +18,30 @@ namespace Yooshina.Content.Web.Controllers {
 		}
 
 
+
+
 		[ViewLayout("_Dashboard")]
-		public ViewResult Index(int? page, string title) {
+		public ViewResult Index() {
+			ViewData["Title"] = "Content Category Tree View";
+			var result = _Repo.Query();
+			result = result.Where(x => x.ParentId == null);
+
+			var finalResult = result
+				.OrderByDescending(x => x.Id)
+				.Select(x => new ContentCategoryViewModel() {
+					Id = x.Id,
+					Title = x.Title,
+					ParentId = x.ParentId,
+					Slug = x.Slug
+				});
+
+			return View(finalResult.AsEnumerable());
+		}
+
+
+
+		[ViewLayout("_Dashboard")]
+		public ViewResult Index2(int? page, string title) {
 			ViewData["Title"] = "Content Category";
 			var cPage = page ?? 1;
 			if (cPage < 1) {

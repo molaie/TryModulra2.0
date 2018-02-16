@@ -1,5 +1,18 @@
-﻿@model PagedModel<ContentCategoryViewModel>
+﻿@model IEnumerable<ContentCategoryViewModel>
 Title is : @ViewData["Title"]
+
+
+
+<div class="col-6">
+	<div class="tree">
+		@foreach (var item in Model) {
+			@await Component.InvokeAsync("ContentCategories", item)
+		}
+	</div>
+</div>
+
+
+
 <table class="table">
 	<thead>
 		<tr>
@@ -16,7 +29,7 @@ Title is : @ViewData["Title"]
 		</tr>
 	</thead>
 	<tbody>
-		@foreach (var item in Model.Model) {
+		@foreach (var item in Model) {
 			<tr>
 				<td>
 					@Html.DisplayFor(modelItem => item.Title)

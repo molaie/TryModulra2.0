@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2020
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{10D8E54E-1058-4834-A19E-64515D0E9F6D}"
 EndProject
@@ -40,11 +40,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yooshina.Web.Common", "Yoos
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{40A491D6-3BCF-4F1D-9100-8D9DAFD74651}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yooshina.Content.Service", "src\Modules\Content\Yooshina.Content.Service\Yooshina.Content.Service.csproj", "{7036B175-8B45-44B7-8D6A-7576B1A1BF82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yooshina.Content.Service", "src\Modules\Content\Yooshina.Content.Service\Yooshina.Content.Service.csproj", "{7036B175-8B45-44B7-8D6A-7576B1A1BF82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yooshina.Content.Web", "src\Modules\Content\Yooshina.Content.Web\Yooshina.Content.Web.csproj", "{85E74879-9EB0-4C3F-B82D-8FCFAC1884BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yooshina.Content.Web", "src\Modules\Content\Yooshina.Content.Web\Yooshina.Content.Web.csproj", "{85E74879-9EB0-4C3F-B82D-8FCFAC1884BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{2A9E00BD-92EA-40A6-A5BF-10AACBA667EE}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Yooshina.Shared", "src\Shared\Yooshina.Shared\Yooshina.Shared\Yooshina.Shared.shproj", "{FDF074DA-982F-4CEC-AA90-FEAE88070295}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		src\Shared\Yooshina.Shared\Yooshina.Shared\Yooshina.Shared.projitems*{fdf074da-982f-4cec-aa90-feae88070295}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -116,6 +123,8 @@ Global
 		{40A491D6-3BCF-4F1D-9100-8D9DAFD74651} = {10BAC5B3-1A22-401D-90B4-146E07F71CE6}
 		{7036B175-8B45-44B7-8D6A-7576B1A1BF82} = {40A491D6-3BCF-4F1D-9100-8D9DAFD74651}
 		{85E74879-9EB0-4C3F-B82D-8FCFAC1884BE} = {40A491D6-3BCF-4F1D-9100-8D9DAFD74651}
+		{2A9E00BD-92EA-40A6-A5BF-10AACBA667EE} = {10D8E54E-1058-4834-A19E-64515D0E9F6D}
+		{FDF074DA-982F-4CEC-AA90-FEAE88070295} = {2A9E00BD-92EA-40A6-A5BF-10AACBA667EE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {808D0F02-7A1D-4C2D-B3EC-C5FE40B6ED47}
