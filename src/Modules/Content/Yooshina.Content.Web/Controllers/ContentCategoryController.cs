@@ -1,5 +1,6 @@
 ﻿using AspNetCore.MvcPager;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Linq;
 using Yooshina.Content.Model;
 using Yooshina.Content.ViewModels;
@@ -23,20 +24,61 @@ namespace Yooshina.Content.Web.Controllers {
 		[ViewLayout("_Dashboard")]
 		public ViewResult Index() {
 			ViewData["Title"] = "Content Category Tree View";
-			var result = _Repo.Query();
-			result = result.Where(x => x.ParentId == null);
+			//var result = _Repo.Query();
+			//result = result.Where(x => x.ParentId == null);
 
-			var finalResult = result
-				.OrderByDescending(x => x.Id)
-				.Select(x => new ContentCategoryViewModel() {
-					Id = x.Id,
-					Title = x.Title,
-					ParentId = x.ParentId,
-					Slug = x.Slug
-				});
+			//var finalResult = result
+			//	.OrderByDescending(x => x.Id)
+			//	.Select(x => new ContentCategoryViewModel() {
+			//		Id = x.Id,
+			//		Title = x.Title,
+			//		ParentId = x.ParentId,
+			//		Slug = x.Slug
+			//	});
 
-			return View(finalResult.AsEnumerable());
+			return View(GetAllMenuItems());
 		}
+
+
+
+		private IList<ContentCategory> GetAllMenuItems() {
+			return _Repo.Query().ToList();
+		}
+
+		private IList<ContentCategory> GetChildrenMenu(IList<ContentCategory> menuList, long? parentId = null) {
+			return menuList.Where(x => x.ParentId == parentId).OrderBy(x => x.Ordering).ToList();
+		}
+		private ContentCategory GetMenuItem(IList<ContentCategory> menuList, long id) {
+			return menuList.FirstOrDefault(x => x.Id == id);
+		}
+
+
+
+
+		private IList<ContentCategoryViewModel> GetMenu(IList<ContentCategory> menuList, long? parentId) {
+			var children = GetChildrenMenu(menuList, parentId);
+
+			if (!children.Any()) {
+				return new List<ContentCategoryViewModel>();
+			}
+
+			var vmList = new List<ContentCategoryViewModel>();
+			foreach (var item in children) {
+				var menu = GetMenuItem(menuList, item.Id);
+				var vm = new ContentCategoryViewModel();
+				vm.Id = menu.Id;
+				vm.Title = menu.Title;
+				vm.Slug = menu.Slug;
+				vm.Children = GetMenu(menuList, menu.Id);
+				vmList.Add(vm);
+			}
+
+			return vmList;
+		}
+
+
+
+
 
 
 

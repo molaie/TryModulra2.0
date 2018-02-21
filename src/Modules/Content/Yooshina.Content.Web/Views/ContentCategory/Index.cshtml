@@ -1,13 +1,109 @@
 ﻿@model IEnumerable<ContentCategoryViewModel>
 Title is : @ViewData["Title"]
 
+<style>
 
+	.tree li {
+		margin: 0;
+		list-style-type: none;
+		position: relative;
+		padding: 20px 0 5px 5px;
+	}
+
+
+
+	.tree > ul {
+		padding-right: 10px;
+	}
+
+	.tree li > ul {
+		padding-right: 40px;
+	}
+
+	.tree li::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		width: 1px;
+		height: 100%;
+		right: -20px;
+		left: auto;
+		border-left: 1px solid #ccc;
+		bottom: 50px;
+	}
+
+	.tree li::after {
+		content: '';
+		position: absolute;
+		top: 30px;
+		width: 25px;
+		height: 20px;
+		right: -20px;
+		left: auto;
+		border-top: 1px solid #ccc;
+	}
+
+	.tree li a {
+		display: inline-block;
+		border: 1px solid #ccc;
+		padding: 5px 10px;
+		text-decoration: none;
+		color: #111;
+		font-size: 11px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		z-index: 5;
+		float: left;
+	}
+
+	.tree > ul > li::before, .tree > ul > li::after {
+		border: 0;
+	}
+
+	.tree li:last-child::before {
+		height: 30px;
+	}
+
+	.tree li a:hover {
+		background: #c8e4f8;
+		color: #000;
+		border: 1px solid #94a0b4;
+	}
+
+	.tree li a.active {
+		background: #c8e4f8;
+		color: #000;
+		border: 1px solid #94a0b4;
+	}
+
+	.tree .percontrol {
+		top: -5px;
+		position: relative;
+		z-index: 4;
+	}
+
+		.tree .percontrol .peritem label {
+			margin-right: 10px;
+		}
+
+		.tree .percontrol .panel {
+			margin-bottom: 0;
+			border-top-right-radius: 0;
+		}
+
+	.tree a.collapsed i.fa-minus-square-o, .tree a.expanded i.fa-plus-square-o {
+		display: none;
+	}
+</style>
 
 <div class="col-6">
 	<div class="tree">
-		@foreach (var item in Model) {
-			@await Component.InvokeAsync("ContentCategories", item)
-		}
+		<ul>
+			<li>
+				@await Component.InvokeAsync("ContentCategories", Model)
+			</li>
+		</ul>
 	</div>
 </div>
 

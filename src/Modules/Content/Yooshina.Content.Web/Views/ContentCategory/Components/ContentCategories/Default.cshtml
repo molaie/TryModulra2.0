@@ -1,16 +1,57 @@
-﻿@model ContentCategoryViewModel
-
-<div class="percontrol">
-	<div class="main-controls">
-		<a href="#" class="tree-action">
-			<i class="fa fa-plus-square-o" aria-hidden="true"></i>
-			<i class="fa fa-minus-square-o" aria-hidden="true"></i>
-			@Model.Title
-		</a>
-		<div class="btn-group" role="group">
-			<a href="#" class="new btn newcat" data-catid="@Model.Id" data-text="@Model.Title">
-				<i class="fa fa-file" aria-hidden="true"></i>
+﻿@model IEnumerable<ContentCategoryViewModel>
+@*<div class="percontrol">
+		<div class="main-controls">
+			<a href="#" class="tree-action">
+				<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+				<i class="fa fa-minus-square-o" aria-hidden="true"></i>
+				@Model.Title
 			</a>
+			<div class="btn-group" role="group">
+				<a href="#" class="new btn newcat" data-catid="@Model.Id" data-text="@Model.Title">
+					<i class="fa fa-file" aria-hidden="true"></i>
+				</a>
+			</div>
 		</div>
-	</div>
-</div>
+	</div>*@
+
+
+
+
+@foreach (var item in Model) {
+	if (item.Children.Any()) {
+		<div class="percontrol">
+			<div class="main-controls">
+				<a href="#" class="tree-action">
+					<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+					<i class="fa fa-minus-square-o" aria-hidden="true"></i>
+					@item.Title
+				</a>
+				<div class="btn-group" role="group">
+					<a href="#" class="new btn newcat" data-catid="@item.Id" data-text="@item.Title">
+						<i class="fa fa-file" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<ul>
+			<li>
+				@await Component.InvokeAsync("ContentCategories", item.Children)
+			</li>
+		</ul>
+	} else {
+		<div class="percontrol">
+			<div class="main-controls">
+				<a href="#" class="tree-action">
+					<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+					<i class="fa fa-minus-square-o" aria-hidden="true"></i>
+					@item.Title
+				</a>
+				<div class="btn-group" role="group">
+					<a href="#" class="new btn newcat" data-catid="@item.Id" data-text="@item.Title">
+						<i class="fa fa-file" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+	}
+}  
