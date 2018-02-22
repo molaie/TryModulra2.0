@@ -36,7 +36,10 @@ namespace Yooshina.Content.Web.Controllers {
 			//		Slug = x.Slug
 			//	});
 
-			return View(GetAllMenuItems());
+			var tempResult = GetAllMenuItems();
+
+
+			return View(GetMenu(tempResult, null));
 		}
 
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using Yooshina.Content.ViewModels;
 
 namespace Yooshina.Content.Web.ViewComponents {
@@ -15,7 +16,7 @@ namespace Yooshina.Content.Web.ViewComponents {
 		}
 
 
-		public IViewComponentResult Invoke(ContentCategoryViewModel ccVm) {
+		public IViewComponentResult Invoke(IEnumerable<ContentCategoryViewModel> ccVm) {
 			//contentCategory = ccVm;
 			return View(ccVm);
 		}
