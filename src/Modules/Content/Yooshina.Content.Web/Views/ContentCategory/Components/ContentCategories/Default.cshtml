@@ -26,8 +26,8 @@
 					<i class="fa fa-minus-square-o" aria-hidden="true"></i>
 					@item.Title
 				</a>
-				<div class="btn-group" role="group">
-					<a href="#" class="new btn newcat" data-catid="@item.Id" data-text="@item.Title">
+				<div class="btn-actions">
+					<a href="#" class="new newcat" data-catid="@item.Id" data-text="@item.Title">
 						<i class="fa fa-file" aria-hidden="true"></i>
 					</a>
 				</div>
@@ -35,7 +35,7 @@
 		</div>
 		<ul>
 			<li>
-				@await Component.InvokeAsync("ContentCategories", item.Children)
+				@await Component.InvokeAsync("ContentCategories", item.Children.AsEnumerable())
 			</li>
 		</ul>
 	} else {
@@ -46,8 +46,8 @@
 					<i class="fa fa-minus-square-o" aria-hidden="true"></i>
 					@item.Title
 				</a>
-				<div class="btn-group" role="group">
-					<a href="#" class="new btn newcat" data-catid="@item.Id" data-text="@item.Title">
+				<div class="btn-actions">
+					<a href="#" class="new newcat" data-catid="@item.Id" data-text="@item.Title">
 						<i class="fa fa-file" aria-hidden="true"></i>
 					</a>
 				</div>
